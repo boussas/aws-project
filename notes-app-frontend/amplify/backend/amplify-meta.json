@@ -1,0 +1,114 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-notesapp-dev-b35c0-authRole",
+      "UnauthRoleArn": "arn:aws:iam::471112549837:role/amplify-notesapp-dev-b35c0-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::471112549837:role/amplify-notesapp-dev-b35c0-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-notesapp-dev-b35c0-deployment",
+      "UnauthRoleName": "amplify-notesapp-dev-b35c0-unauthRole",
+      "StackName": "amplify-notesapp-dev-b35c0",
+      "StackId": "arn:aws:cloudformation:us-east-1:471112549837:stack/amplify-notesapp-dev-b35c0/ee74a970-484d-11f0-aeaf-0affff4b1575",
+      "AmplifyAppId": "d17knw7uroqxza",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-notesapp-dev-b35c0-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
+    }
+  },
+  "auth": {
+    "notesapp879a2c7e": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "frontendAuthConfig": {
+        "socialProviders": [],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": []
+        },
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-notesapp-dev-b35c0-deployment/amplify-cfn-templates/auth/notesapp879a2c7e-cloudformation-template.json",
+        "logicalId": "authnotesapp879a2c7e"
+      },
+      "lastPushTimeStamp": "2025-06-13T12:08:31.339Z",
+      "output": {
+        "UserPoolId": "us-east-1_yBNoKBNL3",
+        "AppClientIDWeb": "153ssrprpqgaimtat21enjh6i",
+        "AppClientID": "kt7jvt33skjn3njvleof68u9s",
+        "IdentityPoolId": "us-east-1:7d6c60ae-fe75-4b10-9910-fe4a5012c97d",
+        "UserPoolArn": "arn:aws:cognito-idp:us-east-1:471112549837:userpool/us-east-1_yBNoKBNL3",
+        "IdentityPoolName": "notesapp879a2c7e_identitypool_879a2c7e__dev",
+        "UserPoolName": "notesapp879a2c7e_userpool_879a2c7e"
+      },
+      "lastPushDirHash": "nwhbnq5rer8OQYjUayB4ZwjBB9Q="
+    }
+  },
+  "function": {
+    "notesappf4928b8e": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "lastBuildTimeStamp": "2025-06-13T12:06:11.573Z",
+      "lastBuildType": "PROD",
+      "lastPackageTimeStamp": "2025-06-13T12:06:11.781Z",
+      "distZipFilename": "notesappf4928b8e-464262524e354a486b6b-build.zip",
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-notesapp-dev-b35c0-deployment",
+        "s3Key": "amplify-builds/notesappf4928b8e-464262524e354a486b6b-build.zip"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-notesapp-dev-b35c0-deployment/amplify-cfn-templates/function/notesappf4928b8e-cloudformation-template.json",
+        "logicalId": "functionnotesappf4928b8e"
+      },
+      "lastPushTimeStamp": "2025-06-13T12:08:31.339Z",
+      "output": {
+        "LambdaExecutionRoleArn": "arn:aws:iam::471112549837:role/notesappLambdaRole07d8d729-dev",
+        "Region": "us-east-1",
+        "Arn": "arn:aws:lambda:us-east-1:471112549837:function:notesappf4928b8e-dev",
+        "Name": "notesappf4928b8e-dev",
+        "LambdaExecutionRole": "notesappLambdaRole07d8d729-dev"
+      },
+      "lastPushDirHash": "jC7+gmn0JJCo/5l1CHO+kqqWQEc="
+    }
+  },
+  "api": {
+    "notesApi": {
+      "service": "API Gateway",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "notesappf4928b8e",
+          "attributes": [
+            "Name",
+            "Arn"
+          ]
+        }
+      ],
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-notesapp-dev-b35c0-deployment/amplify-cfn-templates/api/notesApi-cloudformation-template.json",
+        "logicalId": "apinotesApi"
+      },
+      "lastPushTimeStamp": "2025-06-13T12:08:31.339Z",
+      "output": {
+        "ApiName": "notesApi",
+        "RootUrl": "https://a1wfnvyyyc.execute-api.us-east-1.amazonaws.com/dev",
+        "ApiId": "a1wfnvyyyc"
+      },
+      "lastPushDirHash": "nKVh20w5AY21qLtJsYUzZpSF6f0="
+    }
+  }
+}
