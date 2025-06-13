@@ -7,6 +7,7 @@ Features:
 - CloudWatch for logging
 
 ## 🏗️ Architecture
+![project](https://github.com/user-attachments/assets/fb878053-9e6d-4f9a-bed9-4262912346b8)
 
 
 ## 📂 Project Structure
